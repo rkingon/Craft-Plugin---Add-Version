@@ -9,4 +9,5 @@ A seriously simple way to bust cache on any file. Appends the Unix Epoch (Second
 
 ####As a Filter
 `{{ "/assets/css/main.css" | addVersion }}`
+
 `{{ "/assets/css/main.css" | addVersion("rev") }}`
