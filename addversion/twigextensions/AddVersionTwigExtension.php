@@ -23,6 +23,7 @@ class AddVersionTwigExtension extends \Twig_Extension
 
 	public function addVersion($path,$var="v")
 	{
+		$path = parse_url($path)['path'];
 		$fullpath = ( strpos($path, "/") === 0 ) ? $_SERVER['DOCUMENT_ROOT'].$path : $path;
 		return (file_exists($fullpath)) ? $path."?".$var."=".date("U", filemtime($fullpath)) : $path;
 	}
